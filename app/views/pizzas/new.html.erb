@@ -2,6 +2,14 @@
 
 <h2>Customize a new pizza</h2>
 
+<% if @pizza.errors.any? %>
+  <ul class="errors">
+    <% @pizza.errors.full_messages.each do |err| %>
+      <li><%= err %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @pizza do |f| %>
   <div>
     <%= f.label :crust %>
