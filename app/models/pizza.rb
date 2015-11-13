@@ -1,4 +1,6 @@
 class Pizza < ActiveRecord::Base
+  has_many :ingredients
+
   validates :crust, { presence: true }
   validates :sauce, { presence: true }
   validates :size, { presence: true }

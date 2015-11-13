@@ -15,6 +15,13 @@ class PizzasController < ApplicationController
     end
   end
 
+  def show
+    @pizza = Pizza.find_by(id: params[:id])
+    @ingredient = Ingredient.new
+
+    render :show
+  end
+
 
   private
 

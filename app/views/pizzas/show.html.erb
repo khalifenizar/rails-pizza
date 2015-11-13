@@ -1,0 +1,26 @@
+<h1>Pizza Time!</h1>
+
+<h2>
+  Customize your
+  <%= @pizza.size %>
+  pizza.
+</h2>
+
+<h3>Ingredients</h3>
+
+<ul>
+  <% @pizza.ingredients.each do |ingredient| %>
+    <li><%= ingredient.name %></li>
+  <% end %>
+</ul>
+
+<h3>Add an ingredient</h3>
+
+<%= form_for [ @pizza, @ingredient ] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <button type="submit">
+    Add this ingredient
+  </button>
+<% end %>
